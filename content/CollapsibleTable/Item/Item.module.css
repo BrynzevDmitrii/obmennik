@@ -1,0 +1,81 @@
+.border{
+    border-bottom: 2px solid;
+}
+
+.row {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3px;
+    
+}
+
+
+.tooltip {
+    width: 9%;
+    border: none;
+    background: none;
+
+    display: flex;
+
+    position: relative;
+    
+    
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+
+    width: 200px;
+
+    background-color: black;
+    color: #fff;
+
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+
+    z-index: 1;
+    top:90%;
+
+    left:0;
+    margin-left: 0px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 100%;
+    left: -30px;
+
+    margin-left: 56px;
+    
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    transform: scale(1.2);
+    transition: all 1s;
+}
+.buttonAccordion{
+    transform: scale(180deg);      
+} 
+
+.item-container {  
+    overflow: hidden;
+    transition: height 0.65s ease-in-out;
+}
+
+.description {
+    display: flex;
+    flex-direction: column; 
+}

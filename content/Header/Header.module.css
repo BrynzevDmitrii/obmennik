@@ -1,0 +1,10 @@
+.box {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+    background: linear-gradient(78deg, #e2e2e2, #e4be57);
+    color: rgb(228, 239, 248);
+    font-size: 26px;
+    
+}

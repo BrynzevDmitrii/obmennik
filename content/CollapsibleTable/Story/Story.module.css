@@ -1,0 +1,26 @@
+.item {
+    width: 90%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+    margin: 0 auto;
+
+    border-bottom: 2px solid rgb(57 63 40 / 23%);
+}
+
+.closed-button{
+    width: 100%;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    border: none;
+    background: transparent;
+    
+    padding: 10px;
+    
+}
