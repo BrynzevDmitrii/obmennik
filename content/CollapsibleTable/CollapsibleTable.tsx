@@ -1,7 +1,5 @@
-import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
-import { useEffect } from "react";
 import { useRef, useState } from "react";
 import { Mycontext } from "../../context/Context";
 import { IApiProps } from "../type/IApiProps";
@@ -18,13 +16,8 @@ import Item from "./Item/Item";
   historyStoreg: IApiProps[];
 }): JSX.Element {
   const [currentIdx, setCurrentIdx] = useState(-1);
-  const [positionScroll, setPositionScroll] = useState<number | undefined>(0)
   const conteinerRef = useRef<HTMLDivElement>(null)
-  useEffect(()=>{
-    conteinerRef.current?.addEventListener("scroll", (e)=>{
-    setPositionScroll(e.target.scrollTop)
-    })
-  },[])
+
 
   const btnOnClick = (idx: number) => {
     setCurrentIdx((currentValue) => (currentValue !== idx ? idx : -1));
@@ -54,7 +47,7 @@ import Item from "./Item/Item";
             key={indx + 9}
             className={style["container"]}>
             <ul 
-            className={classNames(positionScroll > 60 ? style['stick_menu'] : style["header__table"])} 
+            className={style["header__table"]} 
             key={indx}>
               <li key={57}>
                 <h2>Код Валюты</h2>

@@ -11,7 +11,7 @@ export default function Story({
   historyStoreg: IApiProps[];
   id: string;
 }): JSX.Element {
-  const {conteinerRef, btnOnClick,} = useContext(Mycontext);
+  const {conteinerRef, btnOnClick} = useContext(Mycontext);
   const positionScroll = conteinerRef.current?.scrollTop;
 
   function closedStore() {
