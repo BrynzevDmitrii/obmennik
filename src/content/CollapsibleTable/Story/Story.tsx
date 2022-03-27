@@ -1,4 +1,4 @@
-import { RefObject, useContext, useRef } from "react";
+import { useContext} from "react";
 import { Mycontext } from "../../../context/Context";
 import { IApiProps } from "../../type/IApiProps";
 import Difference from "../Difference/Difference";

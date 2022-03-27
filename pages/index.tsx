@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import Layout from '../layouts/Loyaut'
+import Layout from '../src/layouts/Loyaut'
+
 
 
 
