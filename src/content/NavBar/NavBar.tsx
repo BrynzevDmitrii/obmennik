@@ -1,23 +1,20 @@
-import Link from "next/link"
-import React from "react"
-import style from "./NavBar.module.css"
+import { useEffect, useState } from "react";
+import Burger from "./Burger/Burger";
+import Items from "./Items/Items";
+
+
 
 
 const NavBar = () =>{
+   const[widht, setWidht] = useState<number|undefined>();
+    useEffect(() => {
+        window.addEventListener('resize', ()=> {
+          return setWidht(window.innerWidth)  
+        })
+  }, [widht]);
     return(
-            <ul className={style['box']}>
-                <li className={style['item']}>
-                    <Link href={'/'}>Главная
-                    </Link></li>
-                <li className={style['item']}>
-                    <Link href={'/cours'}>
-                        <a>Курс валют</a>
-                    </Link>
-                </li>
-                <li className={style['item']}>О нас</li>
-                <li className={style['item']}>Контакты</li>
-                <li className={style['item']}>FAQ</li>
-            </ul>
+        (widht>1024)? (<Items />):(<Burger />)
+        
             
     )
 }
