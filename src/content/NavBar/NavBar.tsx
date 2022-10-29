@@ -7,6 +7,7 @@ import Items from "./Items/Items";
 
 const NavBar = () =>{
    const[widht, setWidht] = useState<number>();
+
     useEffect(() => {
         window.addEventListener('resize', ()=> {
           return setWidht(window.innerWidth)  
