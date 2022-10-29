@@ -6,16 +6,17 @@ import Items from "./Items/Items";
 
 
 const NavBar = () =>{
-   const[widht, setWidht] = useState<number|undefined>();
+   const[widht, setWidht] = useState<number>();
     useEffect(() => {
         window.addEventListener('resize', ()=> {
           return setWidht(window.innerWidth)  
         })
   }, [widht]);
     return(
-        (widht>1024)? (<Items />):(<Burger />)
-        
-            
+        (widht!==undefined && widht > 1024 )?
+         <Items />:
+         <Burger />
+           
     )
 }
 export default NavBar
