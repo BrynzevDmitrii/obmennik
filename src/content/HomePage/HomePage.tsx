@@ -36,7 +36,7 @@ const HomePage = (): JSX.Element => {
     arrDays.push(
       today.getFullYear() +
         "/" +
-        "0" +
+         +
         (today.getMonth() + 1) +
         "/" +
         (today.getDate() - 1)

@@ -5,17 +5,12 @@ import Items from "./Items/Items";
 
 
 
-const NavBar = () =>{
-   const[widht, setWidht] = useState<number>();
+const NavBar = ({widht}:{widht: boolean}) =>{
 
-    useEffect(() => {
-        window.addEventListener('resize', ()=> {
-          return setWidht(window.innerWidth)  
-        })
-  }, [widht]);
+   
     return(
-        (widht!==undefined && widht > 1024 )?
-         <Items />:
+        (widht!==undefined && widht  )?
+         <Items /> :
          <Burger />
            
     )

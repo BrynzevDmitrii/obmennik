@@ -3,10 +3,10 @@ import NavBar from "../NavBar/NavBar"
 import style from "./Header.module.css"
 
 
-const Header = (): JSX.Element =>{
+const Header = ({widhtWindows}:{widhtWindows:boolean}): JSX.Element =>{
     return(
         <div className={style['box']}>
-            <NavBar />
+            <NavBar widht = {widhtWindows} />
         </div>
     )
 }
