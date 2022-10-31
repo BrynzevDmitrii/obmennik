@@ -8,7 +8,7 @@ const Items = ():JSX.Element=> {
             </Link></li>
         <li className={style['item']}>
             <Link href={'/cours'}>
-                <a>Курс валют</a>
+                Курс валют
             </Link>
         </li>
         <li className={style['item']}>О нас</li>

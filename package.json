@@ -22,6 +22,7 @@
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
     "next": "12.1.0",
+    "node-sass": "^7.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-query": "^3.39.2",

@@ -1,6 +1,6 @@
 import React from "react"
 import NavBar from "../NavBar/NavBar"
-import style from "./Header.module.css"
+import style from "./Header.module.scss"
 
 
 const Header = ({widhtWindows}:{widhtWindows:boolean}): JSX.Element =>{
