@@ -1,0 +1,76 @@
+@import './variebals.scss';
+html,
+body {
+  padding: 0;
+  margin: 0;
+  @font-face {font-family: "VTB Group Cond Book"; 
+    src: url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.eot"); 
+    src: url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.eot?#iefix") 
+    format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.woff2")
+     format("woff2"), 
+     url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.woff") 
+     format("woff"),
+      url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.ttf") 
+      format("truetype"), 
+      url("//db.onlinewebfonts.com/t/535f840c3f8648137acc62e170b62847.svg#VTB Group Cond Book") 
+      format("svg"); }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+ul {
+  padding-inline-start: 0;
+}
+
+.main {
+  height: 100%;
+}
+
+footer{
+  height: 300px;
+
+  background: black;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  margin-top: calc($widhtHeader + 5rem);
+}
+
+.banner {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+
+
+  margin: 0 auto;
+}
+ .center {
+  margin: 0 auto;
+ }
+
+ .descript {
+   width: 80%;
+   margin: 0 auto;
+ }
+
+ .red_span {
+  font-family: 'comic sans ms', sans-serif;
+  font-size: 14px;
+  color: #800000;
+  margin-left: 40%;
+ }

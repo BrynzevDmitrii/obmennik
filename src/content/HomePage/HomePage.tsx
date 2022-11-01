@@ -36,8 +36,7 @@ const HomePage = (): JSX.Element => {
     arrDays.push(
       today.getFullYear() +
         "/" +
-         +
-        (today.getMonth() + 1) +
+        +(today.getMonth() + 1) +
         "/" +
         (today.getDate() - 1)
     );
@@ -62,12 +61,11 @@ const HomePage = (): JSX.Element => {
 
   return (
     <>
-    {(!bigData.length ) ? <Image src={'/spiner.gif'}
-                                width = {200}
-                                height = {200}
-    /> :
-      <CollapsibleTable historyStoreg={storeg} state={bigData} />
-    }
+      {!bigData.length ? (
+        <Image src={"/spiner.gif"} width={200} height={200} />
+      ) : (
+        <CollapsibleTable historyStoreg={storeg} state={bigData} />
+      )}
     </>
   );
 };

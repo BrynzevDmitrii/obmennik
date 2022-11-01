@@ -1,5 +1,5 @@
 import Link from "next/link"
-import style from "./Items.module.css"
+import style from "./Items.module.scss"
 
 const Items = ():JSX.Element=> {
     return (<ul className={style['box']}>

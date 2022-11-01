@@ -1,9 +1,0 @@
-.item {
-    padding-left: 20px;
-}
-
-.item:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: all 1s;
-}
