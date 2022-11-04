@@ -1,6 +1,7 @@
 @import './variebals.scss';
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   @font-face {font-family: "VTB Group Cond Book"; 
@@ -73,31 +74,7 @@ footer{
 }
 
 .container {
+  max-width: 70vmax;
   height: 100vh;
-  margin-top: calc($widhtHeader + 5rem);
-}
-
-.banner {
-  width: 80%;
-
-  display: flex;
-  flex-direction: column;
-
-
   margin: 0 auto;
 }
- .center {
-  margin: 0 auto;
- }
-
- .descript {
-   width: 80%;
-   margin: 0 auto;
- }
-
- .red_span {
-  font-family: 'comic sans ms', sans-serif;
-  font-size: 14px;
-  color: #800000;
-  margin-left: 40%;
- }

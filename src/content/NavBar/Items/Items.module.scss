@@ -19,20 +19,20 @@
     font-size: 1.37em;
     display: flex;
     flex-direction: row;
-   
-
-    @include bp-767 {
-        color: black;
-        padding: 2rem;
-    }
+        
+    
 
     & > a {
         text-decoration: none;
         color: $white;
+        @include bp-767 {
+            color: black;
+            padding: 0.5rem;
+        }
     }
 
-    
 }
+
 
 .item:hover{
     cursor: pointer;

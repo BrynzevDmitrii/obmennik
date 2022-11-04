@@ -1,6 +1,7 @@
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Loyaut from "../../layouts/Loyaut";
 import CollapsibleTable from "../CollapsibleTable/CollapsibleTable";
 import { IApiProps } from "../type/IApiProps";
 
@@ -60,13 +61,13 @@ const HomePageWithApi = (): JSX.Element => {
   }, []);
 
   return (
-    <>
+    <Loyaut>
       {!bigData.length ? (
         <Image src={"/spiner.gif"} width={200} height={200} />
       ) : (
         <CollapsibleTable historyStoreg={storeg} state={bigData} />
       )}
-    </>
+    </Loyaut>
   );
 };
 
