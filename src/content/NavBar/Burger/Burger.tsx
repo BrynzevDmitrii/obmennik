@@ -1,6 +1,6 @@
-import useEnhancedEffect from "@mui/material/utils/useEnhancedEffect";
 import classNames from "classnames";
 import { SetStateAction, useEffect, useState } from "react";
+import Items from "../Items/Items";
 import styles from "./Burger.module.scss";
 
 const Burger =():JSX.Element=>{
@@ -8,8 +8,8 @@ const Burger =():JSX.Element=>{
     
     useEffect(()=>{
         isOpen? 
-        document.body.classList.add(styles['bagraundBody']) :
-        document.body.classList.remove(styles['bagraundBody'])
+        document.body.classList.add(styles['backgroundBody']) :
+        document.body.classList.remove(styles['backgroundBody'])
     },[isOpen])
 
     const openBurger=():any=>{
@@ -24,6 +24,7 @@ const Burger =():JSX.Element=>{
         onClick={openBurger} 
         src={isOpen?'/icons8-close-50.svg' : '/burger50_50.png'}
      />
+    <Items isOpen = {isOpen}/>
         </div>
     );
 }

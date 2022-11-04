@@ -1,20 +1,21 @@
-import Link from "next/link"
-import style from "./Items.module.scss"
+import classNames from "classnames";
+import Link from "next/link";
+import { SetStateAction } from "react";
+import style from "./Items.module.scss";
 
-const Items = ():JSX.Element=> {
-    return (<ul className={style['box']}>
-        <li className={style['item']}>
-            <Link href={'/'}>Главная
-            </Link></li>
-        <li className={style['item']}>
-            <Link href={'/cours'}>
-                Курс валют
-            </Link>
+const Items = ({isOpen}:{isOpen?:SetStateAction<boolean>}): JSX.Element => {
+  return (
+    <nav>
+      <ul className={classNames(isOpen ? style.none: style.box)}>
+        <li className={style["item"]}>
+          <Link href={"/"}>Обменять валюту</Link>
         </li>
-        <li className={style['item']}>О нас</li>
-        <li className={style['item']}>Контакты</li>
-        <li className={style['item']}>FAQ</li>
-    </ul>)
-}
+        <li className={style["item"]}>
+          <Link href={"/cours"}>Архив курса валют</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
-export default Items
+export default Items;

@@ -1,21 +1,54 @@
-.box{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin: 0 auto;
+@import './../../../../styles/breakepoints.scss';
+@import './../../../../styles/variebals.scss';
+
+.none{
+    @include bp-767 {
+        flex-direction: column;
+        justify-content: center;
+       
+        height: 30vmin;
+        padding-top: 5rem;
+
+    }
 }
 
 .item {
-    padding-left: 20px;
+    padding: 3vmax;
     font-family: "VTB Group Cond Book";
     font-weight: bolder;
-    font-size: 26px;
+    font-size: 1.37em;
     display: flex;
     flex-direction: row;
+   
+
+    @include bp-767 {
+        color: black;
+        padding: 2rem;
+    }
+
+    & > a {
+        text-decoration: none;
+        color: $white;
+    }
+
+    
 }
 
 .item:hover{
     cursor: pointer;
     transform: scale(1.2);
     transition: all 1s;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 auto;
+
+    @include bp-767 {
+        display: none;
+    }
+    
 }

@@ -9,7 +9,7 @@ export default function Layout ({
     children: React.ReactNode
   }): JSX.Element {
 
-    const matches = useMediaQuery('(min-width: 768px)')
+    const matches = useMediaQuery('(min-width: 767px)')
     const[widht, setWidht] = useState(matches);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function Layout ({
   }, [matches]);
     return (
       <>
-        <div className='container'>
+        
       <Head>
         <title>Золотая точка</title>
         <meta name="description" content="Меняем волюты выгодно." />
@@ -28,15 +28,15 @@ export default function Layout ({
       <div>
       <Header widhtWindows = {widht} />
       </div>
-     
+      <div className='container'>
       <main className='main'>
        {children }
       </main>
-
+      </div>
       <footer className='grid-footer'>
       © 2022 DmitryBryncev.
       </footer>
-    </div>
+    
       </>
     )
   }

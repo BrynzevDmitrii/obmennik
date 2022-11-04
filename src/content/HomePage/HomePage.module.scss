@@ -1,0 +1,193 @@
+@import '../../../styles/variebals.scss';
+@import '../../../styles/breakepoints.scss';
+
+.previu_banner {
+    display: flex;
+    justify-content: space-between;
+
+    &-info {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-height: 10vmax;
+        width: 100%;
+        @include bp-767{
+            margin-left: 5vmax;
+        }
+    }
+
+   
+}
+
+
+
+.previu_banner-title {
+    font-feature-settings: normal;
+    font-family: "VTB Group UI", sans-serif;
+    color: $textDarkGrey;
+    font-weight: 500;
+    font-size: 3.1rem;
+    line-height: 100%;
+    letter-spacing: -3px;
+    padding-bottom: 13px;
+
+    @include bp-1024 {
+        font-size: 2.1rem;
+        line-height: 100%;
+        letter-spacing: -1px;
+        padding-bottom: 10px;
+    }
+
+    @include bp-767{
+        font-size: 3.1rem;
+        letter-spacing: -3px;
+        padding-bottom: 33px;
+    }
+   
+
+
+}
+
+.previu_banner-description {
+    font-family: "VTB Group UI",
+        sans-serif;
+    color: $textLightGrey;
+    font-weight: 400;
+    font-size: 1.1em;
+    max-width: 40vmin;
+    line-height: 120%;
+    padding-bottom: 13px;
+
+    @include bp-1024 {
+        font-size: 0.9em;
+        min-width: 35vmin;
+        line-height: 120%;
+        padding-bottom: 13px;
+    }
+
+    @include bp-767{
+        font-size: 1.1em;
+        max-width: 60vmin;
+        line-height: 120%;
+        padding-bottom: 33px;
+        text-align: left;
+    }
+
+   
+}
+
+.previu_banner-btn {
+    display: flex;
+    @include bp-767{
+    // width: 55vmax;
+    }
+
+
+    .previu_banner-left--btn {
+        box-sizing: border-box;
+        width: 100%;
+
+        border: none;
+        border-radius: 8px;
+        box-shadow: none;
+
+        cursor: pointer;
+
+        background: $blueVtb;
+        transition: background 0.15s ease-out 0s, color 0.15s ease-out 0s, border 0.15s ease-out 0s;
+
+        display: inline-block;
+
+        text-align: center;
+        text-decoration: none;
+
+        padding: 1.2rem 2.5rem;
+        margin-right: 0.8rem;
+        min-height: 60px;
+
+        color: rgb(255, 255, 255);
+
+        font-weight: 400;
+        font-size: 1.1rem;
+        letter-spacing: -0.4px;
+        line-height: 110%;
+        font-family: "VTB Group UI", sans-serif;
+
+        @include bp-1024 {
+            padding: 1.2rem 1rem;
+            margin-right: 0.8rem;
+            min-height: 30px;
+
+            color: rgb(255, 255, 255);
+
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: -0.4px;
+            line-height: 110%;
+        }
+
+        &:hover {
+            color: rgb(255, 255, 255);
+            background: linear-gradient(90deg, rgb(17, 52, 181) 0%, rgb(35, 83, 224) 75%);
+        }
+
+
+
+    }
+
+
+
+    .previu_banner-right--btn {
+        box-sizing: border-box;
+        width: 100%;
+
+        border: 1px solid $textLightGrey;
+        border-radius: 8px;
+        box-shadow: none;
+
+        cursor: pointer;
+
+        background: transparent;
+        transition: background 0.15s ease-out 0s, color 0.15s ease-out 0s, border 0.15s ease-out 0s;
+
+        display: inline-block;
+
+        text-align: center;
+        text-decoration: none;
+
+        padding: 1.2rem 2.5rem;
+        margin-right: 0.8rem;
+        min-height: 60px;
+
+        color: $black;
+
+        font-weight: 400;
+        font-size: 1.1rem;
+        letter-spacing: -0.4px;
+        line-height: 110%;
+        font-family: "VTB Group UI", sans-serif;
+
+        @include bp-1024 {
+            padding: 1.2rem 1rem;
+            margin-right: 0.8rem;
+            min-height: 30px;
+
+            color: $black;
+
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: -0.4px;
+            line-height: 110%;
+        }
+
+    }
+}
+
+.previu_banner-img{
+    max-width: 30vmax;
+    @include bp-767{
+        display: none;
+    }
+}

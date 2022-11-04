@@ -1,73 +1,31 @@
-import axios from "axios";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import CollapsibleTable from "../CollapsibleTable/CollapsibleTable";
-import { IApiProps } from "../type/IApiProps";
+import Layout from "../../layouts/Loyaut";
+import styles from "./HomePage.module.scss";
 
-const valutApi = "https://www.cbr-xml-daily.ru/daily_json.js";
 
-const HomePage = (): JSX.Element => {
-  const [bigData, setbigData] = useState<IApiProps[]>([]);
-  useEffect(() => {
-    let date: IApiProps[] = [];
-    axios
-      .get(valutApi)
-      .then((res) => {
-        date.push(res.data);
-        setbigData(date);
-      })
-      .catch((err) => {
-        if (err.res) {
-          console.log(err);
-        } else if (err.request) {
-          console.log("ошибка сети");
-        }
-      });
-  }, []);
-
-  let today = new Date();
-
-  let time = today.getTime();
-  today = new Date(time - (time % 86400000));
-
-  let arrDays: string[] = [];
-
-  for (let i = 0; i < 14; i++, today.setDate(today.getDate() - 1)) {
-    arrDays.push(
-      today.getFullYear() +
-        "/" +
-        +(today.getMonth() + 1) +
-        "/" +
-        (today.getDate() - 1)
-    );
-  }
-
-  const [storeg, setStoreg] = useState<IApiProps[]>([]);
-  useEffect(() => {
-    let store: IApiProps[] = [];
-    arrDays.forEach((day) => {
-      axios(`https://www.cbr-xml-daily.ru/archive/${day}/daily_json.js`)
-        .then((response) => store.push(response.data))
-        .catch((err) => {
-          if (err.res) {
-            console.log(err);
-          } else if (err.request) {
-            console.log("ошибка сети");
-          }
-        });
-    });
-    setStoreg(store);
-  }, []);
-
+export const HomePage = (): JSX.Element => {
   return (
-    <>
-      {!bigData.length ? (
-        <Image src={"/spiner.gif"} width={200} height={200} />
-      ) : (
-        <CollapsibleTable historyStoreg={storeg} state={bigData} />
-      )}
-    </>
+    <Layout>
+      <section className="container">
+        <div className={styles["previu_banner"]}>
+          <div className={styles["previu_banner-info"]}>
+            <h1 className={styles["previu_banner-title"]}>Обмен валют</h1>
+            <p className={styles["previu_banner-description"]}>
+              Информация о курсах обмена иностранных валют является справочной и
+              может меняться в течение дня
+            </p>
+            <div className={styles["previu_banner-btn"]}>
+              <button className={styles["previu_banner-left--btn"]}>
+                Расчитать
+              </button>
+              <button className={styles["previu_banner-right--btn"]}>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <img className={styles["previu_banner-img"]} src="https://www.vtb.ru/media-files/vtb.ru/sitepages/personal/platezhi-i-perevody/obmen-valjuty/1x_Hero_CurrencyExchange.png" 
+               alt="evrodollar"/>
+        </div>
+      </section>
+    </Layout>
   );
 };
-
-export default HomePage;

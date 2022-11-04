@@ -1,18 +1,25 @@
-
+@import './../../../../styles/breakepoints.scss';
 .r {
+    display: flex;
     position: absolute;
+    justify-content: center;
     z-index: 1;
     width: 80%;
     height: 109vh;
     background-color: rgba(255, 255, 255, 0.966);
     .burger_img {
+        cursor: pointer;
         position: absolute;
         left: 90%;
+        @include bp-767 {
+            width: 7vmin;
+        }
         }
 }
 
-.bagraundBody {
+.backgroundBody {
     background-color: #717174;
     overflow: hidden;
 }
+
 
