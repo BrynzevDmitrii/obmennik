@@ -1,6 +1,11 @@
+@import '../../../../styles/variebals.scss';
+
+.converter {
+    padding: 48px 0 48px;
+}
 .converter_title {
     font-feature-settings: normal;
-    padding-top: 120px;
+    padding-bottom: 60px;
     font-family: "VTB Group UI", sans-serif;
     vertical-align: baseline;
     color: rgb(182, 193, 221);
@@ -8,4 +13,36 @@
     font-size: 3.5rem;
     line-height: 100%;
     letter-spacing: -2px;
+
+}
+
+.converter_wrapper {
+    background-color: $white;
+    border-radius: 24px;
+    display: flex;
+    padding: 48px;
+    user-select: none;
+    align-items: flex-start;
+    width: inherit;
+   
+}
+
+.converter_exchange {
+    font-feature-settings: normal;
+    font-family: "VTB Group UI", sans-serif;
+    vertical-align: baseline;
+    color: $textDarkGrey;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+}
+
+.converter_calculate {
+    padding: 48px;
+    border:3px solid $darkBlue;
+    border-radius: 24px;
+    flex-basis: 528px;
+    margin-left: 20px;
+
 }

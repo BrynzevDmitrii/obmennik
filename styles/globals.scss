@@ -44,6 +44,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  background:$bodyBackgraundColor;
 }
 ol, ul {
 	list-style: none;
@@ -63,6 +64,7 @@ table {
 
 .main {
   height: 100%;
+
 }
 
 footer{
@@ -75,8 +77,13 @@ footer{
 
 .container {
   max-width: 40vmax;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .slt80 {

@@ -8,21 +8,25 @@ import { SelectConvert } from "./dateForSelects/DateForSelects";
 export const CurrencyConverter = (): JSX.Element => {
   return (
     <section className={styles["converter"]}>
-    <div>
+
       <p className={styles["converter_title"]}>Конвертер валют</p>
-      <p>Способ обмена</p>
-      <BaseSelect dataSelect={SelectConvert} />
 
-      <p>у меня есть</p>
-      <ValuteSelect />
-      <BaseInput />
+      <div className={styles["converter_wrapper"]}>
+        <div>
+        <p className={styles["converter_exchange"]}>Способ обмена</p>
+        <BaseSelect dataSelect={SelectConvert} />
 
-      <p>Мне надо получить</p>
-      <ValuteSelect />
-      <BaseInput />
-      </div>
-      <div>
-        <CalculateForm />
+        <p>у меня есть</p>
+        <ValuteSelect />
+        <BaseInput />
+
+        <p>Мне надо получить</p>
+        <ValuteSelect />
+        <BaseInput />
+        </div>
+        <div className={styles["converter_calculate"]}>
+          <CalculateForm />
+        </div>
       </div>
     </section>
   );
