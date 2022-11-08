@@ -1,6 +1,106 @@
-.calculate_options {
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 100%;
-    letter-spacing: -1.5px;
+@import'../../../styles/variebals.scss';
+
+.calculate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &_options {
+        font-feature-settings: normal;
+        margin: 0px;
+        padding: 0px;
+        font-family: "VTB Group UI", sans-serif;
+        vertical-align: baseline;
+        color: $textDarkGrey;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -1.5px;
+    }
+
+    &_title {
+
+        font-feature-settings: normal;
+        margin: 16px 0 0 0;
+        padding: 0px;
+        font-family: "VTB Group UI", sans-serif;
+        vertical-align: baseline;
+        color: $textLightGrey;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        letter-spacing: -0.4px;
+    }
+
+    &_btn-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 48px;
+
+        .calculate_btn-serge {
+           
+            display: flex;
+            align-items: center;
+            width:45vmin;
+            font-family: "VTB Group UI", sans-serif;
+            white-space: nowrap;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+            box-shadow: none;
+            cursor: pointer;
+            text-align: left;
+            text-decoration: none;
+            padding: 21px 40px 22px;
+            min-height: 60px;
+            margin-top: 6px;
+            
+            
+            background: linear-gradient(90deg, rgb(0, 55, 255) 0%, rgb(0, 133, 255) 75%);
+            
+              
+            .calculate_btn-text {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                font-weight: 400;
+                font-size: 18px;
+                letter-spacing: -0.3px;
+                line-height: 120%;
+                color:$white;
+                
+                &::after {
+                    content: "";
+                    width: 48px;
+                    height: 38px;
+                    background-image: url('../../../public/left-arrow.svg');
+                    background-repeat: no-repeat;
+                    color: $white;
+                    transform: rotate(180deg);
+    
+                }
+            }
+                
+            
+                
+            }
+        
+    }
+
+    &_afert {
+        margin-top: 16px;
+
+        font-feature-settings: normal;
+        font-family: "VTB Group UI", sans-serif;
+        vertical-align: baseline;
+        color: $textLightGrey;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 120%;
+        letter-spacing: -0.4px;
+    }
 }
