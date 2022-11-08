@@ -1,0 +1,52 @@
+@import '../../../../styles/variebals.scss';
+
+.calculate_btn {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 150ms ease-out 0s;
+    padding: 21px 32px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(10, 40, 150);
+    min-height: 100px;
+    padding: 26px 40px;
+
+    
+
+   
+
+    &:hover {
+    color: $liteBlue;
+    background: $white;
+    border: 1px solid $liteBlue;;
+    }
+
+    
+
+}
+
+.calculate_btn-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: "VTB Group UI", sans-serif;
+    width: 100%;
+    color: $darkBlue;
+    font-weight: 500;
+    line-height: 110%;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    &::after {
+        content: '';
+        width: 28px;
+        height:28px;
+        background-image: url('../../../../public/icon-calculate.svg');
+        background-repeat: no-repeat;
+    }
+}

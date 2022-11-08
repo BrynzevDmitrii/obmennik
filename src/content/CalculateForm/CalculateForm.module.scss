@@ -40,10 +40,9 @@
         margin-top: 48px;
 
         .calculate_btn-serge {
-           
             display: flex;
             align-items: center;
-            width:45vmin;
+            width:inherit;
             font-family: "VTB Group UI", sans-serif;
             white-space: nowrap;
             border: none;
@@ -51,15 +50,18 @@
             outline: none;
             box-sizing: border-box;
             box-shadow: none;
+            background: linear-gradient(90deg, rgb(0, 55, 255) 0%, rgb(0, 133, 255) 75%);
+            transition: background 0.30s ease-out 0s, color 0.30s ease-out 0s, border 0.30s ;
             cursor: pointer;
             text-align: left;
             text-decoration: none;
             padding: 21px 40px 22px;
             min-height: 60px;
             margin-top: 6px;
+            min-height: 100px;
             
             
-            background: linear-gradient(90deg, rgb(0, 55, 255) 0%, rgb(0, 133, 255) 75%);
+            
             
               
             .calculate_btn-text {
@@ -81,11 +83,15 @@
                     background-repeat: no-repeat;
                     color: $white;
                     transform: rotate(180deg);
+                   
     
                 }
             }
                 
-            
+            &:hover {
+                color: rgb(255, 255, 255);
+                background: linear-gradient(90deg, rgb(17, 52, 181) 0%, rgb(35, 83, 224) 75%);
+            }
                 
             }
         
