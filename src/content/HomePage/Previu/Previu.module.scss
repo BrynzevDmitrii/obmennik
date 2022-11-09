@@ -1,6 +1,10 @@
 @import '../../../../styles/variebals.scss';
 @import '../../../../styles/breakepoints.scss';
 
+.previu{
+    margin-bottom: 60px;
+}
+
 .previu_banner {
     padding-top:calc($widhtHeader + 2rem) ;
     display: flex;

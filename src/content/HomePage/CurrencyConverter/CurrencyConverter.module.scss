@@ -1,0 +1,68 @@
+@import '../../../../styles/variebals.scss';
+
+.converter {
+    padding: 48px 0 48px;
+    &_select-box{
+         width: 25vw;
+    }
+
+&_title {
+    font-feature-settings: normal;
+    padding-bottom: 60px;
+    font-family: "VTB Group UI", sans-serif;
+    vertical-align: baseline;
+    color: rgb(182, 193, 221);
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 100%;
+    letter-spacing: -2px;
+
+}
+
+&_wrapper {
+    background-color: $white;
+    border-radius: 24px;
+    display: flex;
+    padding: 48px;
+    user-select: none;
+    align-items: flex-start;
+    width: inherit;
+   
+}
+
+&_exchange {
+    font-feature-settings: normal;
+    font-family: "VTB Group UI", sans-serif;
+    vertical-align: baseline;
+    color: $textDarkGrey;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+}
+
+&_calculate {
+    padding: 48px;
+    border:3px solid $darkBlue;
+    border-radius: 24px;
+    flex-basis: 528px;
+    margin-left: 48px;
+
+}
+
+&_input-box {
+    margin-top: 48px;
+
+    &__span {
+    font-family: "VTB Group UI", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+    color: $textDarkGrey;
+
+    margin-bottom: 32px;
+    }
+}
+
+}

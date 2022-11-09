@@ -12,7 +12,7 @@ export const Previu = ():JSX.Element=>{
             </p>
             <div className={styles["previu_banner-btn"]}>
               <button className={styles["previu_banner-left--btn"]}>
-                Расчитать
+                Расcчитать
               </button>
               <button className={styles["previu_banner-right--btn"]}>
                 Подробнее
