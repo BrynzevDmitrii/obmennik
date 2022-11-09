@@ -4,6 +4,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import styles from './BaseSelect.module.scss'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -16,48 +17,29 @@ const MenuProps = {
   },
 };
 
-export default function BaseSelect({dataSelect}:{dataSelect:string[]}) {
+export default function BaseSelect() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>([]);
 
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      typeof value === 'string'? value.split(',') : value,
-    );
-  };
+ const isOpen =()=>{
+  console.log('open select');
+ }
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 500, mt: 2  }}>
-        <Select
-          className='slt80'
-          displayEmpty
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput />}
-          renderValue={(selected) => {
-            if (selected.length === 0) {
-              return <em>{dataSelect?.[0]}</em>;
-            }
-
-            return selected.join(', ');
-          }}
-          MenuProps={MenuProps}
-          inputProps={{ 'aria-label': 'Without label' }}
-        >
-          {dataSelect.map((item, ind) => (
-            <MenuItem
-              key={ind}
-              value={item}
-            >
-              {item}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+    <div className={styles['select']}>
+        <div className={styles['select_value']}>
+          <button className={styles['select_btn']} onClick = {()=>isOpen()}>
+            <span className={styles['select_span']}>
+              В офисе (наличные)
+              </span></button>
+        </div>
+          <ul className={styles['select_list']}>
+            <li aria-selected = 'true' className={styles['select_item']}>В офисе (наличные)</li>
+            <li aria-selected = 'false'className={styles['select_item']}>В офисе (безналично)</li>
+            <li aria-selected = 'false' className={styles['select_item']}>В интернет-банке и мобильном банке</li>
+            <li aria-selected = 'false' className={styles['select_item']}>В спецкассе по обмену валюты</li>
+            <li aria-selected = 'false' className={styles['select_item']}>Покупка по карте</li>
+          </ul>
     </div>
   );
 }

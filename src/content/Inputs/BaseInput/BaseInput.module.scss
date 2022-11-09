@@ -1,0 +1,40 @@
+@import '../../../../styles/variebals.scss';
+
+.input_wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+
+.input {
+
+    padding: 38px 26px 19px; 
+    margin-top: 32px;
+
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+
+    &_label {
+        position: relative;
+        pointer-events: none;
+
+        left: 25px;
+        top: 66px;
+
+        color: $textLightGrey;
+
+        font-family: "VTB Group UI", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 120%;
+
+        transition: all 0.25s ease-in-out 0s;
+    }
+
+}
