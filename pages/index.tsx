@@ -1,4 +1,4 @@
-import { HomePage } from "../src/content/HomePage/HomePage";
+import { HomePage } from "../src/page-fs/HomePage/HomePage";
 
 
 function Home(): JSX.Element {
