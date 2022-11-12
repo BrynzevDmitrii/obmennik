@@ -1,7 +1,7 @@
 import { useContext} from "react";
-import { Mycontext } from "../../../context/Context";
-import { IApiProps } from "../../type/IApiProps";
-import Difference from "../Difference/Difference";
+import { Mycontext } from "../../context/Context";
+import { IApiProps } from "../../page-fs/arhiveValute/type/IApiProps";
+import Difference from "../../shared/Difference/Difference";
 import style from "./Story.module.css";
 
 export default function Story({

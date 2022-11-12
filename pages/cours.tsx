@@ -1,4 +1,4 @@
-import HomePageWithApi from "../src/content/HomePage/HomePageWithApi"
+import HomePageWithApi from "../src/page-fs/arhiveValute/HomePageWithApi"
 
 export default function cours ():JSX.Element {
     return (

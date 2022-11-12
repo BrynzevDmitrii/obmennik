@@ -1,5 +1,5 @@
 
-import { ButtonCalculater } from "./ButtonCalculater/ButtonCalculater";
+import { ButtonCalculater } from "../ButtonCalculater/ButtonCalculater";
 import styles from "./CalculateForm.module.scss";
 export const CalculateForm = () => {
   return (

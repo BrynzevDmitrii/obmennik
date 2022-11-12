@@ -1,9 +1,9 @@
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Loyaut from "../../layouts/Loyaut";
-import CollapsibleTable from "../CollapsibleTable/CollapsibleTable";
-import { IApiProps } from "../type/IApiProps";
+import Loyaut from "../../widgets/layouts/Loyaut";
+import CollapsibleTable from "../../widgets/CollapsibleTable/CollapsibleTable";
+import { IApiProps } from "./type/IApiProps";
 
 const valutApi = "https://www.cbr-xml-daily.ru/daily_json.js";
 

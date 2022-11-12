@@ -1,7 +1,7 @@
 import style from  "./Difference.module.css"
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { IvName } from "../../type/IApiProps";
+import { IvName } from "../../page-fs/arhiveValute/type/IApiProps";
 import Image from "next/image";
 
 export default function Difference({data}:{data:IvName}){

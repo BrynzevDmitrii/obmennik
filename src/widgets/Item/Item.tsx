@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import { IApiProps, IvName } from "../../type/IApiProps";
-import Difference from "../Difference/Difference";
+import { IApiProps, IvName } from "../../page-fs/arhiveValute/type/IApiProps";
+import Difference from "../../shared/Difference/Difference";
 import Story from "../Story/Story";
 import style from "./Item.module.css";
 

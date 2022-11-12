@@ -1,7 +1,7 @@
-import { CalculateForm } from "../../CalculateForm/CalculateForm";
-import { BaseInput } from "../../Inputs/BaseInput/BaseInput";
-import BaseSelect from "../../Selects/BaseSelect/BaseSelect";
-import { ValuteSelect } from "../../Selects/ValuteSelect/ValuteSelect";
+import { CalculateForm } from "../CalculateForm/CalculateForm";
+import { BaseInput } from "../../shared/BaseInput/BaseInput";
+import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
+import { ValuteSelect } from "../../shared/Selects/ValuteSelect/ValuteSelect";
 import styles from "./CurrencyConverter.module.scss";
 
 export const CurrencyConverter = (): JSX.Element => {

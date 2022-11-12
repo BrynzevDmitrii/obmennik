@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { SetStateAction, useEffect, useState } from "react";
-import Items from "../Items/Items";
+import Items from "../../shared/Items/Items";
 import styles from "./Burger.module.scss";
 
 const Burger =():JSX.Element=>{

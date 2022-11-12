@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Header from "../content/Header/Header";
+import Header from "../Header/Header";
 import { useMediaQuery } from "@react-hook/media-query";
 
 export default function Layout({
