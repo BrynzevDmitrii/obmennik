@@ -1,4 +1,4 @@
-@import '../../../../styles/variebals.scss';
+@import '../../../styles/variebals.scss';
 
 .calculate_btn {
     display: flex;
@@ -46,7 +46,7 @@
         content: '';
         width: 28px;
         height:28px;
-        background-image: url('../../../../public/icon-calculate.svg');
+        background-image: url('../../../public/icon-calculate.svg');
         background-repeat: no-repeat;
     }
 }
