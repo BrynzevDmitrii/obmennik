@@ -2,11 +2,12 @@ import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 import Item from '../../../widgets/Item/Item';
 import styles from './BaseSelect.module.scss'
+import { SelectConvert } from './dateForSelects/DateForSelects';
 
 
 export default function BaseSelect() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
+  const [selectionValue, setSelectionValue] = useState('');
 
  const openSelect =()=>{
   setIsOpen(!isOpen);
@@ -32,11 +33,18 @@ console.log('jhuo')
               </span></button>
         </div>
           <ul  ref ={vref} className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
-            <li id='item-selected'  aria-selected = 'true' className={styles['select_item']}>В офисе (наличные)</li>
-            <li key={2}  aria-selected = 'false'className={styles['select_item']}>В офисе (безналично)</li>
-            <li key={3}  aria-selected = 'false' className={styles['select_item']}>В интернет-банке и мобильном банке</li>
-            <li key={4}  aria-selected = 'false' className={styles['select_item']}>В спецкассе по обмену валюты</li>
-            <li key={5}  aria-selected = 'false' className={styles['select_item']}>Покупка по карте</li>
+            {SelectConvert.map((item, indx)=>{
+              return(
+                <li 
+                className={styles['select_item']} 
+                onClick={()=>{setSelectionValue(item.value)
+                               setIsOpen(false) }} 
+                key={ item.value + indx }
+                >
+                  {item.value}
+                </li>
+              )
+            })}
           </ul>
     </div>
   );
