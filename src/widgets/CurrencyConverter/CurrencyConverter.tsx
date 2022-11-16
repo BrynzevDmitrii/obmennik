@@ -1,4 +1,4 @@
-import { CalculateForm } from "../CalculateForm/CalculateForm";
+import { CalculateForm } from "../../features/CalculateForm/CalculateForm";
 import { BaseInput } from "../../shared/BaseInput/BaseInput";
 import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
 import { ValuteSelect } from "../../shared/Selects/ValuteSelect/ValuteSelect";

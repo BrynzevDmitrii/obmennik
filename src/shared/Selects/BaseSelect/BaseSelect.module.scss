@@ -2,8 +2,9 @@
 
 .select {
     display: flex;
+    position: absolute;
     flex-direction: column;
-    width: 100%; 
+    width: 22%;
 
     &_value {
     height: 80px;
@@ -52,7 +53,14 @@
         letter-spacing: -0.4px;
     }
 
-    &_list {
+    &_list_closed {
+        overflow-y:auto;       
+        height:0;
+
+    }
+
+
+    &_list_open {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -87,10 +95,7 @@
             margin-bottom: 10px;
         }
           
-        height: 0;
-    
-
-
+        height:100%;
     
     }
 

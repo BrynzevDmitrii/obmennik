@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loyaut from "../../widgets/layouts/Loyaut";
 import CollapsibleTable from "../../widgets/CollapsibleTable/CollapsibleTable";
-import { IApiProps } from "./type/IApiProps";
+import { IApiProps } from "../../shared/Difference/type/IApiProps";
 
 const valutApi = "https://www.cbr-xml-daily.ru/daily_json.js";
 
