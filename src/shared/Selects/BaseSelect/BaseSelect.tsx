@@ -1,27 +1,15 @@
 import classNames from 'classnames';
-import { useEffect, useRef, useState } from 'react';
-import Item from '../../../widgets/Item/Item';
+import { useState } from 'react';
 import styles from './BaseSelect.module.scss'
 import { SelectConvert } from './dateForSelects/DateForSelects';
 
 
 export default function BaseSelect() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectionValue, setSelectionValue] = useState('');
+  const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
 
  const openSelect =()=>{
   setIsOpen(!isOpen);
- }
-
- useEffect(()=>{
-  const y  = document.getElementsByTagName('ariaSelected');
-  console.log(y);
-  
- },[])
-
-const vref = useRef(null)
- const selectValue = () =>{
-console.log('jhuo')
  }
 
   return (
@@ -32,7 +20,7 @@ console.log('jhuo')
               {selectionValue}
               </span></button>
         </div>
-          <ul  ref ={vref} className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
+          <ul className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
             {SelectConvert.map((item, indx)=>{
               return(
                 <li 
