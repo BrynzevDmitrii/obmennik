@@ -2,9 +2,7 @@
 
 .select {
     display: flex;
-    position: absolute;
     flex-direction: column;
-    width: 22%;
 
     &_value {
     height: 80px;
@@ -63,8 +61,11 @@
     &_list_open {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 21vmax;
         max-height: 310px;
+
+        position: absolute;
+        margin-top: 82px;
 
         background-color: $white;
 
