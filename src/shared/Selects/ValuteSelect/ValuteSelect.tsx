@@ -1,34 +1,35 @@
-import { MouseEvent, useRef, useState } from "react"
+import { MouseEvent, useState } from "react"
 
 import styles from "./ValuteSelect.module.scss"
 
 const y = ['₽', '$', '€'];
 
-export const ValuteSelect = (setSelected:()=>void):JSX.Element => {
+export const ValuteSelect = ({setSelected}:{setSelected:(current:string)=>void}):JSX.Element => {
     const [positionActive, setPositionActive] = useState(2)
 
-    const refR = useRef(null);
+    const left = 58
 
-    const activeRef = useRef(null)
-    const left = 58;
-    const r = (e: MouseEvent<HTMLLIElement, MouseEvent>):void=>{
+    const r = (e: MouseEvent<HTMLLIElement, globalThis.MouseEvent>):void=>{
+        
     const idActive = e.target.id;
+
     if(idActive > '0'){
         setPositionActive(left*idActive)
-        setSelected(e.target.innerText)
+        setSelected(e.target.innerHTML)
     }
     else {
         setPositionActive(2)
+        setSelected(e.target.innerHTML)
     }
     }
     return(
-        <ul  ref={activeRef} className={styles['valute_list']}>
+        <ul className={styles['valute_list']}>
 
             <li style = {{left:positionActive}} className={styles['active']}></li>
             {y.map((item, idx)=>{
                 return(
                     <li 
-                    key={idx} 
+                    key={idx+item} 
                     id={String(idx)}
                     className={styles['valute_item']}
                     onClick={(e)=>r(e)}

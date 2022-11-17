@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BaseInput } from "../../shared/BaseInput/BaseInput";
 import { ValuteSelect } from "../../shared/Selects/ValuteSelect/ValuteSelect";
 
 export const ValuteInputBox = (): JSX.Element => {
-    const [selectedСurrency, setSelectedСurrency] = useState('р')
+    const [selectedСurrency, setSelectedСurrency] = useState('')
+    // useEffect(()=>{setSelectedСurrency(valut)},[selectedСurrency])
+
+
+    const currentSelected = (current:string)=>{
+      setSelectedСurrency(current)
+    }
+    
+    
   return (
     <>
-      <ValuteSelect />
-        <BaseInput valut = {'p'}/>
+      <ValuteSelect setSelected = {currentSelected} />
+        <BaseInput valut = {selectedСurrency}/>
     </>
   );
 };
