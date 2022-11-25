@@ -99,14 +99,17 @@
           
         height:100%;
         @include bp-1390 {
-            width: 49vmax;
+            width: 66vmin;
+        }
+        @include bp-767 {
+            width: 50vmin;
         }
         @include bp-699 {
-            width: 42vmax
+            width: 49vmin
         } 
-        
+
         @include bp-629 {
-            width: 41vmax;
+            width: 49vmin;
         }
 
         @include bp-449 {
