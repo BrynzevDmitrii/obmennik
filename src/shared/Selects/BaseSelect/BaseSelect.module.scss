@@ -1,10 +1,9 @@
 @import'../../../../styles/variebals.scss';
+@import'../../../../styles/breakepoints.scss';
 
 .select {
     display: flex;
-    position: absolute;
     flex-direction: column;
-    width: 22%;
 
     &_value {
     height: 80px;
@@ -63,8 +62,11 @@
     &_list_open {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 21vmax;
         max-height: 310px;
+
+        position: absolute;
+        margin-top: 82px;
 
         background-color: $white;
 
@@ -96,6 +98,23 @@
         }
           
         height:100%;
+        @include bp-1390 {
+            width: 66vmin;
+        }
+        @include bp-767 {
+            width: 50vmin;
+        }
+        @include bp-699 {
+            width: 49vmin
+        } 
+
+        @include bp-629 {
+            width: 49vmin;
+        }
+
+        @include bp-449 {
+            width: 48vmax;
+        }
     
     }
 
@@ -123,6 +142,8 @@
         box-shadow: none;
         background: inherit;
         border-radius: 8px;
+
+       
 
         cursor: pointer;
         &:hover {

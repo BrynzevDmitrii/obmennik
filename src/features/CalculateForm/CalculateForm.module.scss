@@ -1,4 +1,5 @@
 @import'../../../styles/variebals.scss';
+@import '../../../styles/breakepoints.scss';
 
 .calculate {
     display: flex;
@@ -83,7 +84,11 @@
                     background-repeat: no-repeat;
                     color: $white;
                     transform: rotate(180deg);
-                   
+                    @include bp-449 {
+                        width: 28px;
+                        height: 38px;
+                        margin-left: 20px;
+                    }
     
                 }
             }

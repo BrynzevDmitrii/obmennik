@@ -3,6 +3,12 @@
 
 .previu{
     margin-bottom: 60px;
+    @include bp-1390 {
+        margin-bottom: 200px;
+    }
+    @include bp-449 {
+        margin-bottom: 300px;
+    }
 }
 
 .previu_banner {

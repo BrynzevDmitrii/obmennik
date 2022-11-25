@@ -18,7 +18,8 @@ export default function BaseSelect() {
           <button className={styles['select_btn']} onClick = {()=>openSelect()}>
             <span className={styles['select_span']}>
               {selectionValue}
-              </span></button>
+              </span>
+          </button>
         </div>
           <ul className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
             {SelectConvert.map((item, indx)=>{

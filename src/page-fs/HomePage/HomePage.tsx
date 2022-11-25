@@ -8,7 +8,7 @@ export const HomePage = (): JSX.Element => {
     <Layout>
       <Previu />
       <CurrencyConverter />
-      
+
     </Layout>
   );
 };

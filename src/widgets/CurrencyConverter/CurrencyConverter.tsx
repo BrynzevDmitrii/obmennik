@@ -1,7 +1,6 @@
 import { CalculateForm } from "../../features/CalculateForm/CalculateForm";
-import { BaseInput } from "../../shared/BaseInput/BaseInput";
+import { ValuteInputBox } from "../../features/ValuteInputBox/ValuteInputBox";
 import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
-import { ValuteSelect } from "../../shared/Selects/ValuteSelect/ValuteSelect";
 import styles from "./CurrencyConverter.module.scss";
 
 export const CurrencyConverter = (): JSX.Element => {
@@ -15,13 +14,11 @@ export const CurrencyConverter = (): JSX.Element => {
           <BaseSelect  />
         <div className={styles["converter_input-box"]}>
           <span className={styles["converter_input-box__span"]}>У меня есть</span>
-          <ValuteSelect />
-          <BaseInput valut = {'p'}/>
+          <ValuteInputBox />
         </div>
         <div className={styles["converter_input-box"]}>
         <span className={styles["converter_input-box__span"]}>Мне надо получить</span>
-          <ValuteSelect />
-          <BaseInput  valut = {'$'}/>
+        <ValuteInputBox />
         </div>         
         </div>
         <div className={styles["converter_calculate"]}>
