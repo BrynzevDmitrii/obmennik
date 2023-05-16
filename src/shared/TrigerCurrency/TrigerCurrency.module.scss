@@ -1,0 +1,66 @@
+.trigger_wrapper {
+     position: relative;
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid rgb(212, 215, 223);
+    border-radius: 8px;
+}
+
+.button {
+    position: relative;
+     border: none;
+
+    &__title {
+        font-family: "VTB Group UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+
+        -webkit-box-align: center;
+        align-items: center;
+        cursor: pointer;
+        border: 3px solid transparent;
+        color: rgb(96, 105, 129);
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 120%;
+
+        &:hover {
+            color: rgb(0, 132, 255);
+        }
+
+       &:focus-visible {
+        color: rgb(0, 132, 255);
+       }
+    
+    }
+
+   
+  
+
+}
+
+.active_btn {
+    font-family: "VTB Group UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    z-index: 1;
+    white-space: nowrap;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(10, 40, 150);
+    
+   
+    .button__title {
+        color: rgb(10, 40, 150);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+    }
+}
