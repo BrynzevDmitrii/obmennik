@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { useRef, useState } from "react";
 import { Mycontext } from "../../context/Context";
-import { IApiProps } from "../../page-fs/arhiveValute/type/IApiProps";
+import { IApiProps } from "../../shared/Difference/type/IApiProps";
 import style from "./CollapsibleTable.module.css";
 import Item from "../Item/Item";
 

@@ -1,9 +1,16 @@
 @import '../../../styles/variebals.scss';
+@import '../../../styles/breakepoints.scss';
 
 .converter {
     padding: 48px 0 48px;
     &_select-box{
          width: 25vw;
+         @include bp-1390 {
+            width: 50vw;
+         }
+         @include bp-449 {
+            width: 91vw;
+         }
     }
 
 &_title {
@@ -27,7 +34,13 @@
     user-select: none;
     align-items: flex-start;
     width: inherit;
-   
+    @include bp-1390 {
+        flex-direction: column; 
+    }
+    @include bp-449 {
+        flex-direction: column;
+        padding: 0;
+    }
 }
 
 &_exchange {
@@ -47,6 +60,14 @@
     border-radius: 24px;
     flex-basis: 528px;
     margin-left: 48px;
+    @include bp-1390 {
+        margin: 100px 0;
+        padding: 62px;
+    }
+
+    @include bp-449 {
+        margin: 50px 0 ;
+    }
 
 }
 

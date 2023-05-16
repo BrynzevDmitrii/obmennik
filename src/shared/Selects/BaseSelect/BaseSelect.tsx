@@ -1,45 +1,42 @@
-import * as React from 'react';
-import {  useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import classNames from 'classnames';
+import { useState } from 'react';
 import styles from './BaseSelect.module.scss'
+import { SelectConvert } from './dateForSelects/DateForSelects';
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
 
 export default function BaseSelect() {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState<string[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
 
- const isOpen =()=>{
-  console.log('open select');
+ const openSelect =()=>{
+  setIsOpen(!isOpen);
  }
 
   return (
     <div className={styles['select']}>
         <div className={styles['select_value']}>
-          <button className={styles['select_btn']} onClick = {()=>isOpen()}>
+          <button className={styles['select_btn']} onClick = {()=>openSelect()}>
             <span className={styles['select_span']}>
-              В офисе (наличные)
-              </span></button>
+              {selectionValue}
+              </span>
+          </button>
         </div>
-          <ul className={styles['select_list']}>
-            <li aria-selected = 'true' className={styles['select_item']}>В офисе (наличные)</li>
-            <li aria-selected = 'false'className={styles['select_item']}>В офисе (безналично)</li>
-            <li aria-selected = 'false' className={styles['select_item']}>В интернет-банке и мобильном банке</li>
-            <li aria-selected = 'false' className={styles['select_item']}>В спецкассе по обмену валюты</li>
-            <li aria-selected = 'false' className={styles['select_item']}>Покупка по карте</li>
+          <ul className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
+            {SelectConvert.map((item, indx)=>{
+              return(
+                <li 
+                className={styles['select_item']} 
+                onClick={()=>{setSelectionValue(item.value)
+                               setIsOpen(false) }} 
+                key={ item.value + indx }
+                >
+                  {item.value}
+                </li>
+              )
+            })}
           </ul>
     </div>
   );
 }
+
+
