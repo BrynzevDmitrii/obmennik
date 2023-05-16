@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { CalculateForm } from "../../features/CalculateForm/CalculateForm";
 import { ValuteInputBox } from "../../features/ValuteInputBox/ValuteInputBox";
 import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
 import styles from "./CurrencyConverter.module.scss";
 
 export const CurrencyConverter = (): JSX.Element => {
+
+  const [available , setAvailable] = useState('₽')
+  const [get , setGet] = useState('₽')
+  const availableValue = (v:string)=>{
+    setAvailable(v)
+  }
+  const getValue = ( v:string )=>{
+    setGet(v)
+  }
   return (
     <section className={styles["converter"]}>
       <p className={styles["converter_title"]}>Конвертер валют</p>
@@ -14,15 +24,15 @@ export const CurrencyConverter = (): JSX.Element => {
           <BaseSelect  />
         <div className={styles["converter_input-box"]}>
           <span className={styles["converter_input-box__span"]}>У меня есть</span>
-          <ValuteInputBox />
+          <ValuteInputBox vlu  = { availableValue }/>
         </div>
         <div className={styles["converter_input-box"]}>
         <span className={styles["converter_input-box__span"]}>Мне надо получить</span>
-        <ValuteInputBox />
+        <ValuteInputBox vlu =  { getValue } />
         </div>         
         </div>
         <div className={styles["converter_calculate"]}>
-          <CalculateForm />
+          <CalculateForm availableValute = { available } getValute = { get }/>
         </div>
       </div>
     </section>
