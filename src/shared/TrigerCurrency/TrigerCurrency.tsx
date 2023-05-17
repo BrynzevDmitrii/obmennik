@@ -18,7 +18,6 @@ export const TrigerCurrency: FunctionComponent<TrigerCurrencyProps> = (props) =>
       <button className={clsx(styles.button, props.isActiveBtn === 2? styles.active_btn : '')} onClick={()=>props.HeandelChange(2)}>
         <p className={styles.button__title}>Валюта/Валюта</p>
       </button>
-      {/* <div className={styles.button__border_decoration}></div> */}
     </div>
   );
 };
