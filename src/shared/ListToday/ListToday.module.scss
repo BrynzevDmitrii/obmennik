@@ -1,0 +1,27 @@
+.title_blok {
+    display: flex;
+    margin-top: 24px;
+
+    &::before {
+        background-color: rgb(25, 174, 222);
+        border-radius: 4px 0px 0px 4px;
+        content: "";
+        margin-right: 8px;
+        flex: 0 0 3px;
+        margin-right: 16px
+    }
+}
+
+.title_p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+
+    font-feature-settings: normal;
+    margin: 0px;
+    padding: 0px;
+    font-family: "VTB Group UI", sans-serif;
+    vertical-align: baseline;
+    color: rgb(25, 174, 222);
+}

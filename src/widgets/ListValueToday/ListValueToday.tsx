@@ -1,15 +1,17 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { TrigerCurrency } from "../../shared/TrigerCurrency/TrigerCurrency";
 
 import styles from "./ListValueToday.module.scss"
 import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
 import { ListToday } from "../../shared/ListToday/ListToday";
+import { useAppDispatch } from "../../hook";
 
 interface ListValueTodayProps {
     
 }
  
 export const ListCurrencyToday: FunctionComponent<ListValueTodayProps> = () => {
+    const dispatch = useAppDispatch()
     const[ isActiveBtn, setIsActiveBtn ] = useState(1)
 
     const isRatio = (btnNumber: 1|2) => {
@@ -26,7 +28,7 @@ export const ListCurrencyToday: FunctionComponent<ListValueTodayProps> = () => {
         <p className={styles.select__title}>Способ обмена</p>
         <BaseSelect />
     </div>
-    <ListToday />
+    <ListToday  />
     
     </> );
 }
