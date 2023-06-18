@@ -1,16 +1,46 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+import { Root } from "../type/currentType";
+
+
+export const fetchList = createAsyncThunk(
+    'currentList/fetchList',
+        async function(_, { rejectWithValue }) {
+            let res = []
+            const response =  axios('https://www.cbr-xml-daily.ru/daily_json.js');
+            const currentList = (await response).data
+            if(!(await response).status) {
+                return rejectWithValue('Server error')
+            }
+            res.push(currentList)
+
+
+            return res;
+        }
+)
 
 const currentListSlice = createSlice({
     name: 'currentList',
     initialState: {
         date: new Date().toLocaleDateString(),
-        currentList: {},
+        loading: false,
+        currentList:[] as any,
     },
-    reducers: {
-        getCurrentList(state){
+    reducers: {},
 
-            state.currentList = 'https://www.cbr-xml-daily.ru/daily_json.js'
-        }
+    extraReducers(builder) {
+        builder
+        .addCase(
+            fetchList.pending, ( state )=>{
+                state.loading = true
+            }
+        )
+        .addCase(
+            fetchList.fulfilled, (state, action)=>{
+                console.log(action.payload)
+            state.currentList = action.payload
+            state.loading = false;
+        })
     }
 })
 

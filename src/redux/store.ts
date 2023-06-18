@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import  currentListSlice  from '../shared/ListToday/redux/currentListSlice'
 import CurrencyConverterSlise from "../widgets/CurrencyConverter/redux/CurrencyConverterSlise"
+import triggerCurrencySlice from "../shared/TrigerCurrency/redux/triggerCurrencySlice"
 
 export const store = configureStore({
     reducer: {
         currentList: currentListSlice,
-        CurrencyConverter: CurrencyConverterSlise
+        CurrencyConverter: CurrencyConverterSlise,
+        triggerCurrencySlice: triggerCurrencySlice,
       
     },
     devTools: process.env.NODE_ENV !== 'production',

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const CurrencyConverterSlise = createSlice({
     name: 'CurrencyConverter',
     initialState: {
-        selectedWay : '',
+        selectedWay : 'В офисе (наличные)',
     },
     reducers: {
         updateSelectedWay(state, payload) {
