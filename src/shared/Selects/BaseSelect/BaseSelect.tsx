@@ -2,9 +2,12 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './BaseSelect.module.scss'
 import { SelectConvert } from './dateForSelects/DateForSelects';
+import { useAppDispatch } from '../../../hook';
+import { updateSelectedWay } from '../../../widgets/CurrencyConverter/redux/CurrencyConverterSlise';
 
 
 export default function BaseSelect() {
+  const dispatch = useAppDispatch()
   const [isOpen, setIsOpen] = useState(false);
   const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
 
@@ -23,11 +26,13 @@ export default function BaseSelect() {
         </div>
           <ul className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
             {SelectConvert.map((item, indx)=>{
+
               return(
                 <li 
                 className={styles['select_item']} 
                 onClick={()=>{setSelectionValue(item.value)
-                               setIsOpen(false) }} 
+                              dispatch(updateSelectedWay(item.value))
+                              setIsOpen(false) }} 
                 key={ item.value + indx }
                 >
                   {item.value}

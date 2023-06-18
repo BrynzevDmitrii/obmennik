@@ -9,3 +9,18 @@
     line-height: 100%;
     letter-spacing: -2px;
 }
+
+.select {
+    max-width: 588px;
+    margin-top: 50px;
+    &__title {
+        font-family: "VTB Group UI", sans-serif;
+        vertical-align: baseline;
+        color: rgb(47, 52, 65);
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: -1.5px;
+        padding-bottom: 24px;
+    }
+}
