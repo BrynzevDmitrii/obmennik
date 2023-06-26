@@ -4,6 +4,7 @@ import Item from "../../widgets/Item/Item";
 import { ItemToday } from "../ItemToday/ItemToday";
 
 import styles from "./ListToday.module.scss";
+import { useState } from "react";
 
 interface ListTodayProps {
 }
@@ -13,6 +14,10 @@ export const ListToday = (props: ListTodayProps) => {
   const selectedWay = useAppSelector(state => state.CurrencyConverter.selectedWay)
   const selectCurrency = useAppSelector(state => state.currentList.currentList)
   const isLoad = useAppSelector(state => state.currentList.loading)
+
+  // const [currentArray, setCurrentArray] = useState([])
+
+
   return (
     <>
       <div className={styles.title_blok}>
@@ -23,19 +28,17 @@ export const ListToday = (props: ListTodayProps) => {
         
       </div>  
 
-      { selectCurrency === null ? 'Loading ... ' :
-      //   <ul>
+      { selectCurrency === undefined || null ? 'Loading ... ' :
+        <div>
+          {
+            <ul>
+            <ItemToday date={selectCurrency[0]?.Valute} />
+          </ul>}
           
-      //       <ItemToday  />
         
-      // </ul>
-      <div>
-       {selectCurrency.map((i: any)=>Object.entries(i.Valute).map((k: any)=>
-       <ul>
-        <ItemToday date={k} />
-       </ul>))}
-      </div>
+        </div>
       }
+      
 
     </>
   );
