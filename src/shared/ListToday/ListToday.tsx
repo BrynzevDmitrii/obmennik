@@ -5,6 +5,7 @@ import { ItemToday } from "../ItemToday/ItemToday";
 
 import styles from "./ListToday.module.scss";
 import { useState } from "react";
+import { Root } from "./type/currentType";
 
 interface ListTodayProps {
 }
@@ -30,12 +31,7 @@ export const ListToday = (props: ListTodayProps) => {
 
       { selectCurrency === undefined || null ? 'Loading ... ' :
         <div>
-          {
-            <ul>
-            <ItemToday date={selectCurrency[0]?.Valute} />
-          </ul>}
-          
-        
+            <ItemToday  />
         </div>
       }
       

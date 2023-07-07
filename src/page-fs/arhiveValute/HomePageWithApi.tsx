@@ -44,6 +44,7 @@ const HomePageWithApi = (): JSX.Element => {
   }
 
   const [storeg, setStoreg] = useState<IApiProps[]>([]);
+  
   useEffect(() => {
     let store: IApiProps[] = [];
     arrDays.forEach((day) => {
