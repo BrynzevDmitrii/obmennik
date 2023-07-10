@@ -11,7 +11,7 @@ export const fetchList = createAsyncThunk(
             if(!(await response).status) {
                 return rejectWithValue('Server error')
             }
-            return[ currentList];
+            return currentList;
         }
 )
 
@@ -20,7 +20,7 @@ const currentListSlice = createSlice({
     initialState: {
         date: new Date().toLocaleDateString(),
         loading: false,
-        currentList:[] as any[],
+        currentList:{} as any,
     },
     reducers: {},
 
@@ -34,7 +34,7 @@ const currentListSlice = createSlice({
         .addCase(
             fetchList.fulfilled, (state, action)=>{
                 console.log(action.payload)
-            state.currentList = action.payload
+            state.currentList =[ action.payload]
             state.loading = false;
         })
     }

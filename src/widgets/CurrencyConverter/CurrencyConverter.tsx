@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { CalculateForm } from "../../features/CalculateForm/CalculateForm";
 import { ValuteInputBox } from "../../features/ValuteInputBox/ValuteInputBox";
+import { selectConvert } from "../../shared/Selects/BaseSelect/dateForSelects/DateForSelects"
 import BaseSelect from "../../shared/Selects/BaseSelect/BaseSelect";
+
 import styles from "./CurrencyConverter.module.scss";
+
 
 export const CurrencyConverter = (): JSX.Element => {
 
@@ -21,7 +24,7 @@ export const CurrencyConverter = (): JSX.Element => {
       <div className={styles["converter_wrapper"]}>
         <div className={styles["converter_select-box"]}>
           <p className={styles["converter_exchange"]}>Способ обмена</p>
-          <BaseSelect  />
+          <BaseSelect selectList = { selectConvert } />
         <div className={styles["converter_input-box"]}>
           <span className={styles["converter_input-box__span"]}>У меня есть</span>
           <ValuteInputBox vlu  = { availableValue }/>

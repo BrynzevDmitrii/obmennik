@@ -16,8 +16,6 @@ export const ListToday = (props: ListTodayProps) => {
   const selectCurrency = useAppSelector(state => state.currentList.currentList)
   const isLoad = useAppSelector(state => state.currentList.loading)
 
-  // const [currentArray, setCurrentArray] = useState([])
-
 
   return (
     <>

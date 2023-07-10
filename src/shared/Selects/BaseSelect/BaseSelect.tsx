@@ -1,16 +1,21 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './BaseSelect.module.scss'
-import { SelectConvert } from './dateForSelects/DateForSelects';
 import { useAppDispatch } from '../../../hook';
 import { updateSelectedWay } from '../../../widgets/CurrencyConverter/redux/CurrencyConverterSlise';
+import React from 'react';
 
+interface BaseSelectProps {
+  selectList: { name: string; value: string; }[]
+  width?: number
+}
 
-export default function BaseSelect() {
+ function BaseSelect(props: BaseSelectProps) {
   const dispatch = useAppDispatch()
   const [isOpen, setIsOpen] = useState(false);
   const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
-
+  console.log(props.selectList);
+  
  const openSelect =()=>{
   setIsOpen(!isOpen);
  }
@@ -24,8 +29,8 @@ export default function BaseSelect() {
               </span>
           </button>
         </div>
-          <ul className= {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])}>
-            {SelectConvert.map((item, indx)=>{
+          <ul className = {classNames(isOpen? styles['select_list_open'] : styles['select_list_closed'])} style={{ width: props.width }} >
+            { props.selectList? props.selectList.map((item, indx)=>{
 
               return(
                 <li 
@@ -38,10 +43,12 @@ export default function BaseSelect() {
                   {item.value}
                 </li>
               )
-            })}
+            }): 'loading'}
           </ul>
     </div>
   );
 }
+
+export default React.memo(BaseSelect)
 
 
