@@ -1,4 +1,4 @@
-export  const SelectConvert = [
+export  const selectConvert = [
 {
   name : "В офисе (наличные)",
   value : "В офисе (наличные)"
@@ -21,6 +21,22 @@ export  const SelectConvert = [
 }
 
 ]
+
+export  const selectExchangeMethod = [
+    {
+      name : "В офисе (наличные)",
+      value : "В офисе (наличные)"
+    },
+    {
+        name: " В офисе (безналично)",
+        value: "В офисе (безналично)"
+    },
+    {
+        name: "В интернет банке и мобильном банке",
+        value: "В интернет банке и мобильном банке"
+    },
+    
+    ]
     
    
     
