@@ -1,9 +1,8 @@
-import { FunctionComponent, useEffect, useState } from "react";
-
 import styles from "./ItemToday.module.scss";
 import { useAppDispatch, useAppSelector } from "../../hook";
 import { Office } from "./components/Office/Office";
-import { Root, Valute } from "../ListToday/type/currentType";
+import { IvName, Root } from "../ListToday/type/currentType";
+
 
 export const ItemToday = () => {
     const selectCurrent = useAppSelector((state)=>state.CurrencyConverter.selectedWay)
@@ -44,7 +43,6 @@ export const ItemToday = () => {
                       </li>
 
                ))} 
-               {console.log(Object.values(j[1]))}
 
               </ul>
               ))}

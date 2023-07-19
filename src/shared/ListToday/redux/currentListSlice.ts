@@ -20,7 +20,7 @@ const currentListSlice = createSlice({
     initialState: {
         date: new Date().toLocaleDateString(),
         loading: false,
-        currentList:{} as any,
+        currentList:{} as any as Root,
     },
     reducers: {},
 
