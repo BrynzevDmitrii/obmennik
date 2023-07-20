@@ -28,17 +28,17 @@ export const ItemToday = () => {
 
                       <li className={styles.item_wrapper}>
                       <div className={styles.currency_wrapper}>
-                        <span className={styles.currency_code}>{item[1]?.CharCode}</span> -
-                        <span className={styles.currency_name}>{item[1]?.Name}</span>
-                        {item[1]?.Nominal > 1?<span className={styles.currency_name}> (за {item[1]?.Nominal} ед)</span>: ''}
+                        <span className={styles.currency_wrapper_title}>{item[1]?.CharCode} - {item[1]?.Name}
+                        {item[1]?.Nominal > 1?<span className={styles.currency_wrapper_title}> (за {item[1]?.Nominal} ед)</span>: ''}
+                        </span>
                       </div>
                       <div className={styles.buy}>
-                        <span className={styles.buy__number}>{item[1]?.Value}</span>
-                        <span className={styles.buy__text}>Покупаем</span>
+                        <span className={styles.numbers}>{item[1]?.Value.toFixed(2)}</span>
+                        <span className={styles.title}>Покупаем</span>
                       </div>
                       <div className={styles.sell}>
-                        <span className={styles.sell__number}>{item[1]?.Value + 0.9}</span>
-                        <span className={styles.sell__text}>Продаем</span>
+                        <span className={styles.numbers}>{(item[1]?.Value + 0.9).toFixed(2)}</span>
+                        <span className={styles.title}>Продаем</span>
                       </div>
                       </li>
 
