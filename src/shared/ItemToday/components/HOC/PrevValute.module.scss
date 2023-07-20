@@ -1,4 +1,4 @@
-.item_wrapper {
+.item {
     display: flex;
     justify-content: space-between;
     height: 60px;
@@ -6,7 +6,7 @@
     border-bottom: 1px solid gray;
 }
 
-.currency_wrapper {
+.name__block {
 
     display: flex;
     flex-direction: column;
@@ -71,3 +71,4 @@
         display: flex;
     }
 }
+
