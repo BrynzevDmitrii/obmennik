@@ -33,7 +33,6 @@ const currentListSlice = createSlice({
         )
         .addCase(
             fetchList.fulfilled, (state, action)=>{
-                console.log(action.payload)
             state.currentList =[ action.payload]
             state.loading = false;
         })

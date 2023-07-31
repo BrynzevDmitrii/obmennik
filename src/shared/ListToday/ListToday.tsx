@@ -14,13 +14,10 @@ interface ListTodayProps {
 export const ListToday = (props: ListTodayProps) => {
 
   const appSelectorDate  = useAppSelector(state => state.currentList.date)
-  const selectedWay = useAppSelector(state => state.CurrencyConverter.selectedWay)
   const selectCurrency = useAppSelector(state => state.currentList.currentList)
   const isLoad = useAppSelector(state => state.currentList.loading)
   const conversion = useAppSelector(state=>state.CurrencyConverter.conversion)
-  const dispatch = useAppDispatch()
 
-  // selectedWay == 'В офисе (наличные)'? setConversion('Наличная конвертация') :  setConversion('Безналичная конвертация')
 
   return (
     <>

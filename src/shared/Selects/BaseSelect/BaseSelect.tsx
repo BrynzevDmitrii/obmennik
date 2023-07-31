@@ -14,7 +14,6 @@ interface BaseSelectProps {
   const dispatch = useAppDispatch()
   const [isOpen, setIsOpen] = useState(false);
   const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
-  console.log(props.selectList);
   
  const openSelect =()=>{
   setIsOpen(!isOpen);
