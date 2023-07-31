@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './BaseSelect.module.scss'
 import { useAppDispatch } from '../../../hook';
-import { updateSelectedWay } from '../../../widgets/CurrencyConverter/redux/CurrencyConverterSlise';
+import { updateConversion, updateSelectedWay } from '../../../widgets/CurrencyConverter/redux/CurrencyConverterSlise';
 import React from 'react';
 
 interface BaseSelectProps {
@@ -14,7 +14,6 @@ interface BaseSelectProps {
   const dispatch = useAppDispatch()
   const [isOpen, setIsOpen] = useState(false);
   const [selectionValue, setSelectionValue] = useState('В офисе (наличные)');
-  console.log(props.selectList);
   
  const openSelect =()=>{
   setIsOpen(!isOpen);
@@ -37,6 +36,7 @@ interface BaseSelectProps {
                 className={styles['select_item']} 
                 onClick={()=>{setSelectionValue(item.value)
                               dispatch(updateSelectedWay(item.value))
+                              dispatch(updateConversion('Безналичная конвертация'))
                               setIsOpen(false) }} 
                 key={ item.value + indx }
                 >

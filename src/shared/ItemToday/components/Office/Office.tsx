@@ -8,12 +8,12 @@ interface OfficeProps {
  
 export const Office: FunctionComponent<OfficeProps> = (props: OfficeProps) => {
     return ( <>
-        <li>
+        <>
             <PrevValute valuteCurrents={Object.values(props.data.Valute).filter(item => item.CharCode === 'USD')} current = {'до 30 000.00 '} />
             <PrevValute valuteCurrents={Object.values(props.data.Valute).filter(item => item.CharCode === 'USD')} current = {'от 30 000.00'} />
             <PrevValute valuteCurrents={Object.values(props.data.Valute).filter(item => item.CharCode === 'EUR')} current = {'до 30 000.00 '} />
             <PrevValute valuteCurrents={Object.values(props.data.Valute).filter(item => item.CharCode === 'EUR')} current = {'от 30 000.00'} />
-        </li>
+        </>
     </> );
 }
  
