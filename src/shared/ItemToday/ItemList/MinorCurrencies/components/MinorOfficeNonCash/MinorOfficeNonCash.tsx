@@ -7,18 +7,21 @@ interface MinorOfficeNonCashProps {
 }
  
 export const MinorOfficeNonCash: FunctionComponent<MinorOfficeNonCashProps> = (props:MinorOfficeNonCashProps) => {
-  const usd = props.data.Valute.USD;
-  const eur = props.data.Valute.EUR;
+
   return (
     
     <li >
-      <MinorSample currency={usd} length={{
+      <MinorSample currency={props.data.Valute.USD} length={{
         start: 0,
         end: 8
       }}/>
-      <MinorSample currency={eur}  length={{
+      <MinorSample currency={props.data.Valute.EUR}  length={{
         start: 0,
         end: 8
+      }}/>
+      <MinorSample currency={props.data.Valute.GBP}  length={{
+        start: 0,
+        end: 3
       }}/>
     </li>
   )

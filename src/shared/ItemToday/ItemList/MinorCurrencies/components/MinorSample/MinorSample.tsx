@@ -25,7 +25,7 @@ export const MinorSample: FunctionComponent<MinorSampleProps> = (
     <>
       {date === undefined || null
         ? "Loading ..."
-        : dataValute.slice(0, 8).map((i: IvName, index) => {
+        : dataValute.slice(props.length.start, props.length.end).map((i: IvName, index) => {
             return (
               <li className={styles.item_wrapper} key={index}>
                 <div className={styles.currency_wrapper}>
