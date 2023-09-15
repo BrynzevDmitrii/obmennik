@@ -13,27 +13,19 @@ export const Office: FunctionComponent<OfficeProps> = (props: OfficeProps) => {
       {props.activeBtn === "rub/cur" ? (
         <>
           <PrevValute
-            valuteCurrents={Object.values(props.data.Valute).filter(
-              (item) => item.CharCode === "USD"
-            )}
+            valuteCurrents={[props.data.Valute.USD]}
             current={"до 30 000.00 "}
           />
           <PrevValute
-            valuteCurrents={Object.values(props.data.Valute).filter(
-              (item) => item.CharCode === "USD"
-            )}
+            valuteCurrents={[props.data.Valute.USD]}
             current={"от 30 000.00"}
           />
           <PrevValute
-            valuteCurrents={Object.values(props.data.Valute).filter(
-              (item) => item.CharCode === "EUR"
-            )}
+            valuteCurrents={[props.data.Valute.EUR]}
             current={"до 30 000.00 "}
           />
           <PrevValute
-            valuteCurrents={Object.values(props.data.Valute).filter(
-              (item) => item.CharCode === "EUR"
-            )}
+            valuteCurrents={[props.data.Valute.EUR]}
             current={"от 30 000.00"}
           />
         </>
