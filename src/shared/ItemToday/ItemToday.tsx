@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../../hook";
+import { useAppSelector } from "../../hook";
 
 import { ItemList } from "./ItemList/ItemList";
 

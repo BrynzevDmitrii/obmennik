@@ -1,17 +1,10 @@
-import { log } from "console";
-import { useAppDispatch, useAppSelector } from "../../hook";
-import Item from "../../widgets/Item/Item";
+import { useAppSelector } from "../../hook";
 import { ItemToday } from "../ItemToday/ItemToday";
 
 import styles from "./ListToday.module.scss";
-import { useState } from "react";
-import { Root } from "./type/currentType";
-import CurrencyConverterSlise, { updateConversion } from "../../widgets/CurrencyConverter/redux/CurrencyConverterSlise";
 
-interface ListTodayProps {
-}
 
-export const ListToday = (props: ListTodayProps) => {
+export const ListToday = () => {
 
   const appSelectorDate  = useAppSelector(state => state.currentList.date)
   const selectCurrency = useAppSelector(state => state.currentList.currentList)
