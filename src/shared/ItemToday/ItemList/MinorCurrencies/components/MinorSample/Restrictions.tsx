@@ -1,9 +1,10 @@
 import { IvName } from "../../../../../ListToday/type/currentType"
 
 import styles from "../Minor.module.scss";
+import { CurrentsRestrictions } from "../MinorMobileBank/mok";
 
 interface RestrictionsProps {
-    restrictionsArray: any
+    restrictionsArray: CurrentsRestrictions
 }
 
 

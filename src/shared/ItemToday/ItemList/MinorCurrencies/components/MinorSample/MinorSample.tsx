@@ -3,6 +3,7 @@ import { useAppSelector } from "../../../../../../hook";
 import styles from "../Minor.module.scss";
 import { IvName } from "../../../../../ListToday/type/currentType";
 import { Restrictions } from "./Restrictions";
+import { CurrentsRestrictions } from "../MinorMobileBank/mok";
 
 interface MinorSampleProps {
   currency: IvName;
@@ -12,7 +13,7 @@ interface MinorSampleProps {
   }
   current?:{
     currentName: IvName
-    restrictionsArray: any
+    restrictionsArray: CurrentsRestrictions[]
   } 
 
 
@@ -51,13 +52,13 @@ export const MinorSample: FunctionComponent<MinorSampleProps> = (
                 </div>
                 <div className={styles.buy}>
                   <span className={styles.numbers}>
-                    {(props.currency?.Value / i.Value).toFixed(2)}
+                    {(props.currency.Value / i.Value).toFixed(2)}
                   </span>
                   <span className={styles.title}>Покупаем</span>
                 </div>
                 <div className={styles.sell}>
                   <span className={styles.numbers}>
-                    {(props.currency?.Value / i.Value + 0.3).toFixed(2)}
+                    {(props.currency.Value / i.Value + 0.3).toFixed(2)}
                   </span>
                   <span className={styles.title}>Продаем</span>
                 </div>
@@ -65,7 +66,7 @@ export const MinorSample: FunctionComponent<MinorSampleProps> = (
             );
           })}
           {
-            props.current && props.current.restrictionsArray.map((i)=>{
+            props.current && props.current.restrictionsArray.map((i:CurrentsRestrictions)=>{
               return(
                 <li className={styles.item_wrapper} >
             <div className={styles.currency_wrapper}>
@@ -86,13 +87,25 @@ export const MinorSample: FunctionComponent<MinorSampleProps> = (
             </div>
             <div className={styles.buy}>
               <span className={styles.numbers}>
-                {(props.currency?.Value / props.current.currentName?.Value + Object.values(i)[0].buy).toFixed(2)}
+                {
+                  props.current === undefined? 
+                  null
+                  :
+                  (props.currency?.Value / props.current.currentName.Value + Object.values(i)[0].buy).toFixed(2)
+                }
+              
               </span>
               <span className={styles.title}>Покупаем</span>
             </div>
             <div className={styles.sell}>
               <span className={styles.numbers}>
-                {(props.currency?.Value / props.current.currentName?.Value - Object.values(i)[0].sale).toFixed(2)}
+                {
+                   props.current === undefined? 
+                   null
+                   :
+                   (props.currency?.Value / props.current.currentName?.Value - Object.values(i)[0].sale).toFixed(2)
+                }
+              
               </span>
               <span className={styles.title}>Продаем</span>
             </div>
